@@ -23,3 +23,6 @@ program
 
 # Archives 
 *.zip
+
+# build directory
+build/
