@@ -23,5 +23,4 @@ int main(){
 	t1.test_odejmowania_klasyfikatorow();
 	t1.test_operatora_strumienia();
 	t1.wypisz_wynik(std::cout);
-	system("PAUSE");
 }

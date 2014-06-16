@@ -8,6 +8,6 @@
 
 
 
-void operator << (std::ostream & _o, Klasyfikator<Sample> & _k){
-	_k.Wypisz(_o);
-}
+//void operator << (std::ostream & _o, Klasyfikator<Sample> & _k){
+//	_k.Wypisz(_o);
+//}
