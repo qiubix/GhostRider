@@ -1,8 +1,8 @@
 CGFLAGS=-Wall
 OBJ=main.o Sample.o ProstyTest.o
 
-program: $(OBJ)
-	g++ $(CGFLAGS) $(OBJ) -o program
+LeniwyKlasyfikator: $(OBJ)
+	g++ $(CGFLAGS) $(OBJ) -o LeniwyKlasyfikator
 
 Sample.o: Sample.cpp
 	g++ -c $(CGFLAGS) Sample.cpp
@@ -14,4 +14,4 @@ main.o: main.cpp
 	g++ -c $(CGFLAGS) main.cpp
 
 clean:
-	rm -f main.o Sample.o ProstyTest.o
+	rm -f LeniwyKlasyfikator main.o Sample.o ProstyTest.o

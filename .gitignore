@@ -20,6 +20,7 @@
 *.out
 *.app
 program
+LeniwyKlasyfikator
 
 # Archives 
 *.zip
