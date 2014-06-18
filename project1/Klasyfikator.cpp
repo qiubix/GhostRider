@@ -23,10 +23,6 @@ Klasyfikator::~Klasyfikator(){
 	//...
 }
 
-
-
-
-
 //Metoda dodajaca probki w liczbie "ile"
 //do wektora probek
 //Zmienna "base" przechowuje dane o podstawie, z ktorej beda tworzone
@@ -42,7 +38,6 @@ void Klasyfikator::DodajProbki(int ile){
 		v.push_back(tmp);
 	}
 }
-
 
 //Dodaje kolejna probke do klasyfikatora
 //Dostaje znacznik do tablicy i liczbe elementow tablicy, 
@@ -67,10 +62,6 @@ Sample& Klasyfikator::WyszukajNajblizsza(Sample& x){
 	return v[0];
 }
 
-
-
-
-
 //Zamienia miejscami 2 probki w kontenerze
 void Klasyfikator::ZamienProbki(int a, int b){
 	if(a<b){
@@ -89,16 +80,14 @@ void Klasyfikator::ZamienProbki(int a, int b){
 	}
 }
 
-
-
 //Wypisuje cala zawartosc wektora klasyfikatora
 std::ostream & Klasyfikator::WypiszZawartosc(std::ostream & _o){
 	if(v.empty())
 		_o << "Ten klasyfikator nie posiada zadnej probki!\n";
-	for(unsigned int i = 0; i < v.size(); i++){
+	for(unsigned int i = 0; i < v.size(); i++) {
 		_o << v[i];
 		_o << "\n";
-		}
+	}
 		//v[i].WypiszProbke(_o);
 	_o << "\n\n";
 	return _o;
@@ -127,11 +116,12 @@ Klasyfikator& Klasyfikator::operator +(Klasyfikator & strona){
 	bool czy_dodac = true;
 	for(int i=0; i < static_cast<int>(strona.v.size()); i++){
 		czy_dodac = true;
-		for(int j=0; j < static_cast<int>(v.size()); j++)
+		for(int j=0; j < static_cast<int>(v.size()); j++) {
 			if(v[j] == strona.v[i]){
 				czy_dodac = false;
 				break;
 			}
+		}
 		if(czy_dodac)
 			v.push_back(strona.v[i]);
 	}
@@ -147,11 +137,12 @@ Klasyfikator& Klasyfikator::operator +=(Klasyfikator &dodawany){
 	bool czy_dodac = true;
 	for(int i=0; i < static_cast<int>(dodawany.v.size()); i++){
 		czy_dodac = true;
-		for(int j=0; j < static_cast<int>(v.size()); j++)
+		for(int j=0; j < static_cast<int>(v.size()); j++) {
 			if(dodawany.v[i] == v[j]){
 				czy_dodac = false;
 				break;
 			}
+		}
 		if(czy_dodac == true)
 			v.push_back(dodawany.v[i]);
 	}
