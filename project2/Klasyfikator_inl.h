@@ -30,15 +30,17 @@ Klasyfikator<T>::~Klasyfikator(){
 //Dodanie elementu do zbioru przechowywanego przez Klasyfikator
 template<class T>
 T& Klasyfikator<T>::Dodaj(const T & element){
+	//TODO: extract method
 	//Sprawdzenie, czy dodawany element nie nalezy juz do klasyfikatora
 	bool czy_dodac = true;
 	int flaga = -1;
-	for(int i=0; i<wielkosc; i++)
+	for(int i=0; i<wielkosc; i++) {
 		if(tablica[i] == element){
 			czy_dodac = false;
 			flaga = i;
 			break;
 		}
+	}
 	//Jesli w klasyfikatorze nie ma elementu, to dodajemy
 	if(czy_dodac){
 		int nowa_wielkosc = wielkosc + 1;		//Nowa wielkosc o jeden wieksza
@@ -65,6 +67,7 @@ T& Klasyfikator<T>::Dodaj(const T & element){
 //Usuniecie okreslonego elementu
 template<class T>
 void Klasyfikator<T>::Usun(const T & element){
+	//TODO: extract method, remove duplication
 	//Sprawdzenie, czy elemenet, ktory chcemy usunac jest w klasyfikatorze
 	int do_usuniecia = -1;
 	for(int i=0; i<wielkosc; i++)
@@ -109,7 +112,7 @@ void Klasyfikator<T>::Zamien(const int a, const int b){
 }
 
 
-
+//TODO: FIXME: voting method
 /*
 template<>
 bool Klasyfikator<Sample>::Glosowanie(const Sample& x){
