@@ -4,10 +4,10 @@
 
 
 //Samples.h
-//Zawiera deklaracje klasy samples (probki)
+//Zawiera deklaracje klasy Sample (probki)
 
-#ifndef SAMPLES_H
-#define SAMPLES_H
+#ifndef SAMPLE_H
+#define SAMPLE_H
 
 #define MAX 10
 
@@ -37,4 +37,4 @@ private:
 void operator << (std::ostream& _o, Sample& _s);
 
 
-#endif //SAMPLES_H
+#endif //SAMPLE_H

@@ -12,7 +12,7 @@
 #include <cmath>		//sqrt
 #include <cstdlib>
 #include <ctime>
-#include "Samples.h"
+#include "Sample.h"
 
 
 
