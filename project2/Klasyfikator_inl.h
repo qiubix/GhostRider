@@ -25,24 +25,26 @@ Klasyfikator<T>::~Klasyfikator(){
 }
 
 
+//Sprawdzenie, czy dodawany element nie nalezy juz do klasyfikatora
+template<class T>
+int Klasyfikator<T>::czyJuzIstnieje(const T & element){
+	int pozycja = -1;
+	for(int i=0; i<wielkosc; i++) {
+		if(tablica[i] == element){
+			pozycja = i;
+			break;
+		}
+	}
+	return pozycja;
+}
 
 
 //Dodanie elementu do zbioru przechowywanego przez Klasyfikator
 template<class T>
 T& Klasyfikator<T>::Dodaj(const T & element){
-	//TODO: extract method
-	//Sprawdzenie, czy dodawany element nie nalezy juz do klasyfikatora
-	bool czy_dodac = true;
-	int flaga = -1;
-	for(int i=0; i<wielkosc; i++) {
-		if(tablica[i] == element){
-			czy_dodac = false;
-			flaga = i;
-			break;
-		}
-	}
 	//Jesli w klasyfikatorze nie ma elementu, to dodajemy
-	if(czy_dodac){
+	int pozycja = czyJuzIstnieje(element);
+	if(pozycja == -1){
 		int nowa_wielkosc = wielkosc + 1;		//Nowa wielkosc o jeden wieksza
 		T* temp = new T[nowa_wielkosc];			//Nowa, wieksza tablica pomocnicza
 		for(int i=0; i<wielkosc; i++)			//Kopiujemy dotychczasowa zawartosc
@@ -58,7 +60,7 @@ T& Klasyfikator<T>::Dodaj(const T & element){
 		return tablica[wielkosc-1];
 	}
 	else
-		return tablica[flaga];
+		return tablica[pozycja];
 }
 
 
@@ -67,14 +69,8 @@ T& Klasyfikator<T>::Dodaj(const T & element){
 //Usuniecie okreslonego elementu
 template<class T>
 void Klasyfikator<T>::Usun(const T & element){
-	//TODO: extract method, remove duplication
 	//Sprawdzenie, czy elemenet, ktory chcemy usunac jest w klasyfikatorze
-	int do_usuniecia = -1;
-	for(int i=0; i<wielkosc; i++)
-		if(tablica[i] == element){
-			do_usuniecia = i;
-			break;
-		}
+	int do_usuniecia = czyJuzIstnieje(element);
 	if(do_usuniecia >= 0){
 		T* temp = new T[wielkosc - 1];
 		for(int i=0; i<do_usuniecia; i++)

@@ -18,6 +18,7 @@ public:
 	Klasyfikator(Klasyfikator<T> & );
 	~Klasyfikator();
 
+	int czyJuzIstnieje(const T & element);
 	T& Dodaj(const T&);
 	void Usun(const T&);
 	T& ZnajdzNajblizszy(const T&);
