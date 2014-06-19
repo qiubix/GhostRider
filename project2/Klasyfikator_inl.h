@@ -27,7 +27,7 @@ Klasyfikator<T>::~Klasyfikator(){
 
 //Sprawdzenie, czy dodawany element nie nalezy juz do klasyfikatora
 template<class T>
-int Klasyfikator<T>::czyJuzIstnieje(const T & element){
+int Klasyfikator<T>::znajdz(const T & element){
 	int pozycja = -1;
 	for(int i=0; i<wielkosc; i++) {
 		if(tablica[i] == element){
@@ -43,7 +43,7 @@ int Klasyfikator<T>::czyJuzIstnieje(const T & element){
 template<class T>
 T& Klasyfikator<T>::Dodaj(const T & element){
 	//Jesli w klasyfikatorze nie ma elementu, to dodajemy
-	int pozycja = czyJuzIstnieje(element);
+	int pozycja = znajdz(element);
 	if(pozycja == -1){
 		int nowa_wielkosc = wielkosc + 1;		//Nowa wielkosc o jeden wieksza
 		T* temp = new T[nowa_wielkosc];			//Nowa, wieksza tablica pomocnicza
@@ -70,7 +70,7 @@ T& Klasyfikator<T>::Dodaj(const T & element){
 template<class T>
 void Klasyfikator<T>::Usun(const T & element){
 	//Sprawdzenie, czy elemenet, ktory chcemy usunac jest w klasyfikatorze
-	int do_usuniecia = czyJuzIstnieje(element);
+	int do_usuniecia = znajdz(element);
 	if(do_usuniecia >= 0){
 		T* temp = new T[wielkosc - 1];
 		for(int i=0; i<do_usuniecia; i++)
