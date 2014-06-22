@@ -22,7 +22,7 @@ public:
 	T& Dodaj(const T&);
 	void Usun(const T&);
 	T& ZnajdzNajblizszy(const T&);
-	//bool Glosowanie(const Sample&);
+	bool Glosowanie(const Sample&);
 	int LiczbaElementow(); 
 
 	T& operator [](int indeks);

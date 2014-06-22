@@ -109,9 +109,8 @@ void Klasyfikator<T>::Zamien(const int a, const int b){
 
 
 //TODO: FIXME: voting method
-/*
-template<>
-bool Klasyfikator<Sample>::Glosowanie(const Sample& x){
+template<class T>
+bool Klasyfikator<T>::Glosowanie(const Sample& x){
 	this->ZnajdzNajblizszy(x);
 	int ile = 0;
 	for(int i=0; i<3; i++)
@@ -121,7 +120,6 @@ bool Klasyfikator<Sample>::Glosowanie(const Sample& x){
 	else
 	    return false;
 }
-*/
 
 
 
