@@ -33,7 +33,7 @@ public:
 	Klasyfikator<T>& operator + (Klasyfikator<T> &);
 	Klasyfikator<T>& operator - (Klasyfikator<T> &);
 
-	void friend operator << <>(std::ostream &, Klasyfikator<T> & _k);
+	friend void operator <<<>(std::ostream &, Klasyfikator<T> & _k);
 
 private:
 	T* tablica; 
