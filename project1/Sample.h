@@ -14,24 +14,24 @@
 class Klasyfikator;
 
 class Sample{
-public:
-	Sample();		
-	~Sample();		
+  public:
+    Sample();		
+    ~Sample();		
 
-	void DodajNowa(double*);
-	bool PorownajProbki(Sample& a, Sample& b);
-	std::ostream& WypiszProbke(std::ostream& _o);		
-	bool PokazKlase();
+    void DodajNowa(double*);
+    bool PorownajProbki(Sample& a, Sample& b);
+    std::ostream& WypiszProbke(std::ostream& _o);		
+    bool PokazKlase();
 
-	friend bool operator ==(Sample&,Sample&);
-	//friend std::ostream& operator <<(std::ostream&,Klasyfikator&);
-	//friend std::ostream& operator <<(std::ostream&,Sample&);
+    friend bool operator ==(Sample&,Sample&);
+    //friend std::ostream& operator <<(std::ostream&,Klasyfikator&);
+    //friend std::ostream& operator <<(std::ostream&,Sample&);
 
-private:
-	double wektor[MAX];	//przechowuje liczby rzeczywiste
-	bool klasa;			//symbol opisujacy klase probki
-	void UstawKlase();
-	double OdlegloscWektorow(double* );
+  private:
+    double wektor[MAX];	//przechowuje liczby rzeczywiste
+    bool klasa;			//symbol opisujacy klase probki
+    void UstawKlase();
+    double OdlegloscWektorow(double* );
 };
 
 void operator << (std::ostream& _o, Sample& _s);
