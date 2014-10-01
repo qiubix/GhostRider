@@ -9,11 +9,11 @@
 
 template <typename Element, unsigned int columns, typename Container>
 class CSVReaderWriter{
-	public:
-		CSVReaderWriter(){};
-		~CSVReaderWriter(){};
-		void read (const char _separator, Container & _output);
-		void write (const char _separator, Container & _input);
+  public:
+    CSVReaderWriter(){};
+    ~CSVReaderWriter(){};
+    void read (const char _separator, Container & _output);
+    void write (const char _separator, Container & _input);
 };
 
 #include "CSVReaderWriter_inl.h"
