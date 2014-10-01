@@ -19,13 +19,13 @@
 //#include "XMLReaderWriter.h"
 
 class UnitTest{
-public:
-	std::string wyniki;
-	virtual void inicjalizuj() =0;
-	virtual void odczyt() =0;
-	virtual void zapis() =0;
-	virtual void testuj() =0;
-	virtual void wynik(std::ostream& ) =0;
+  public:
+    std::string wyniki;
+    virtual void inicjalizuj() =0;
+    virtual void odczyt() =0;
+    virtual void zapis() =0;
+    virtual void testuj() =0;
+    virtual void wynik(std::ostream& ) =0;
 };
 
 
