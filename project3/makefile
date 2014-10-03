@@ -10,7 +10,7 @@ Sample.o: Sample.cpp
 ProstyTest.o: ProstyTest.cpp
 	g++ -c $(CGFLAGS) ProstyTest.cpp
 
-main.o: main.cpp
+main.o: main.cpp Sample.o ProstyTest.o
 	g++ -c $(CGFLAGS) main.cpp
 
 clean:
